@@ -1,12 +1,13 @@
 from sqlalchemy import Column, Integer, Float, TIMESTAMP
-from task3_sql.database import BaseTable
 from datetime import datetime
+from . import BaseTable
 
 
 class Energy(BaseTable):
     __tablename__ = "energy"
 
-    endpoint_id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
+    endpoint_id = Column(Integer)
     event_time = Column(TIMESTAMP(timezone=True))
     kwh = Column(Float)
 

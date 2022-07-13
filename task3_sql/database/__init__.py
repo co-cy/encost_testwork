@@ -1,13 +1,8 @@
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+from .tables import BaseTable
 
 engine = create_engine('sqlite:///college.db', echo=True)
-BaseTable = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
-
-
-def init_tables():
-    from . import tables
-
-    BaseTable.metadata.create_all(engine)
+BaseTable.metadata.create_all(engine)

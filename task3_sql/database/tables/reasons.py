@@ -1,10 +1,11 @@
 from sqlalchemy import Column, Integer, String, TIMESTAMP
-from task3_sql.database import BaseTable
+from . import BaseTable
 
 
 class Reasons(BaseTable):
     __tablename__ = "reasons"
 
-    endpoint_id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
+    endpoint_id = Column(Integer)
     event_time = Column(TIMESTAMP(timezone=True), index=True)
     reason = Column(String(96))
