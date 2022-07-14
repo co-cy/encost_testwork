@@ -1,4 +1,5 @@
 from django import forms
+from django.utils import timezone
 from .models import *
 from datetime import date, timedelta, datetime, time
 
@@ -13,13 +14,13 @@ class SearchForm(forms.Form):
 
     duration = forms.IntegerField(required=False, label="Duration>:", min_value=0, initial=0)
 
-    start_date = forms.DateField(required=False, label="Start date", initial=date.today)
-    end_date = forms.DateField(required=False, label="End date", initial=lambda: date.today() + timedelta(days=1))
+    start_date = forms.DateField(required=False, label="Start date", initial=timezone.now().date)
+    end_date = forms.DateField(required=False, label="End date", initial=lambda: timezone.now().date() + timedelta(days=1))
 
     start_time = forms.TimeField(required=False, label="Start time",
-                                 initial=datetime.now().time)
+                                 initial=timezone.now().time)
     end_time = forms.TimeField(required=False, label="End time",
-                               initial=lambda: (datetime.now() + timedelta(hours=1)).time())
+                               initial=lambda: (timezone.now() + timedelta(hours=1)).time())
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

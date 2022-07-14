@@ -9,7 +9,6 @@ def index(request: WSGIRequest):
     if request.method == "POST":
         form = SearchForm(request.POST)
         if form.is_valid():
-            print(form.to_dict())
             list_dur = Durations.objects.filter(**form.to_dict())
     else:
         form = SearchForm()
