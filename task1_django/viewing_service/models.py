@@ -50,6 +50,3 @@ class Durations(models.Model):
 
     class Meta:
         db_table = 'durations'
-
-    def __str__(self):
-        return f"|\t{self.id}\t|\t{self.client.name}\t|\t{self.equipment.name}\t|\t{self.mode.name}\t|\n"

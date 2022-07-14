@@ -5,5 +5,10 @@
 </form>
 
 {% for duration in list_duration %}
-    <p>{{duration}}</p>
+   <p>---------------------------------------------------------------</p>
+   <p>| ID: {{duration.id}} | Client: {{duration.client.name}} |</p>
+   <p>| Equipment: {{duration.equipment.name}} | Mode: {{duration.mode.name}} |</p>
+   <p>| Duration: {{duration.minutes}} |</p>
+   <p>| Start: {{duration.start}} |</p>
+   <p>| Stop: {{duration.stop}} |</p>
 {% endfor %}
