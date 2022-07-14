@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="db0390c5-7bd3-4104-984e-e77924481da6" />
+          <option name="name" value="period_view" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/task3_sql/period_view.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
